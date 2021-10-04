@@ -19,7 +19,7 @@ db.killOp(<opId>)
 
 В случае с read операцией:
 
-	1. найти ID операции
+1. найти ID операции
 
 
 		use admin
@@ -29,7 +29,7 @@ db.killOp(<opId>)
          		                          // e.g. { op: "getmore", "command.collection": "someCollection" }
 		] )
 
-	2. Остановка операции с использованием найденого ID
+2. Остановка операции с использованием найденого ID
 
 		db.killOp(<opid of the query to kill>)
 
@@ -70,8 +70,8 @@ db.killOp(<opId>)
 
 Терминируем операцию на шардах
 
-db.killOp("shardB:79014");
-db.killOp("shardA:100813");
+		db.killOp("shardB:79014");
+		db.killOp("shardA:100813");
 
 
 Информация из раздела
@@ -100,14 +100,14 @@ MongoDB interrupts the operation at the next interrupt point.
 
 Используя метод maxTimeMS()
 
-db.location.find( { "town": { "$regex": "(Pine Lumber)",
-                              "$options": 'i' } } ).maxTimeMS(30)
+		db.location.find( { "town": { "$regex": "(Pine Lumber)",
+  		                            "$options": 'i' } } ).maxTimeMS(30)
 
 Плюс можно настроить терминирование определённых команд, в случае превышения лимита выполнения при запуске
 
-db.runCommand( { distinct: "collection",
-                 key: "city",
-                 maxTimeMS: 45 } )
+		db.runCommand( { distinct: "collection",
+       		          key: "city",
+       		          maxTimeMS: 45 } )
 
 И третье настроить мониторинг и отслеживать время выполнения операций с настройкой соответствующих тригеров.
 
