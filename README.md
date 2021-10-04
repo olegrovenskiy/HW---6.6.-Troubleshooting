@@ -77,7 +77,7 @@ db.killOp(<opId>)
 Информация из раздела
 
 https://docs.mongodb.com/manual/tutorial/terminate-running-operations/
---------------
+
 
 - предложите вариант решения проблемы с долгими (зависающими) запросами в MongoDB
 
@@ -85,11 +85,11 @@ https://docs.mongodb.com/manual/tutorial/terminate-running-operations/
 
 1. Посмотреть какой запрос долгий
 
-	db.currentOps{{"secs_running":{$gte:5}}}
+		db.currentOps{{"secs_running":{$gte:5}}}
 
 2. Посмотреть его explain
 
-	.explain("executionStats")
+		.explain("executionStats")
 3. На основе explain модернизировать запрос.
 
 
